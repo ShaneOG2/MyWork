@@ -20,17 +20,17 @@ def doAdd(students):
 
 def readModules():
     modules = [] 
-    moduleName = input("\tEnter the first Module name (blank to quit):").strip()
+    moduleName = input("\tEnter the first Module name (blank to quit): ").strip()
 
     while moduleName != "":
         module = {}
         module["name"] = moduleName
-        module["grade"]=int(input("\t\tEnter grade:"))
+        module["grade"] = int(input("\t\tEnter grade: "))
         modules.append(module)
 
-        moduleName=input("\tEnter next module name (blank to quit):").strip()
+        moduleName=input("\tEnter next module name (blank to quit): ").strip()
 
-        return modules
+    return modules
 
 def displayModules(modules):
     print ("\tName \tGrade")
@@ -40,7 +40,9 @@ def displayModules(modules):
 def doView(students):
     for currentStudent in students:
         print(currentStudent["name"])
-        displayModules(currentStudent["modules"])
+        for module in currentStudent["modules"]:
+            print("\t", module["name"], ":", module["grade"])
+
 
 
 students = []
@@ -51,5 +53,5 @@ while choice != "q":
     elif choice == "v":
         doView(students)
     elif choice != "q":
-        print("\n\nPlease select either (a), (v) and (q)")
+        print("\n\nInvalid Choice\nPlease select either (a), (v) and (q)")
     choice = displayMenu()
