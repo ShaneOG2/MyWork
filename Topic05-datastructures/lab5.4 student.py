@@ -15,6 +15,7 @@ student = {
         }
     ]
 }
+print(student)
 
 print("Student:", student["name"])
 for module in student["modules"]:

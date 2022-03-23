@@ -56,12 +56,9 @@ def doSave(students):
     writeDict(students)
     print("Students saved.")
 
-def readDict():
+def doLoad():
     with open(filename) as f:
         return json.load(f)
-
-def doLoad():
-    return readDict()
 
 students = []
 choice = displayMenu()
